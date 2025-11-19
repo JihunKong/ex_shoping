@@ -20,11 +20,11 @@ MISSIONS = {
 }
 
 def get_img(keyword):
-    # Use Pollinations.ai for generated images based on keywords
-    # Adding 'minimal', 'illustration' to keep style consistent and simple
-    prompt = f"{keyword}, minimal, cute illustration, white background"
-    encoded_prompt = urllib.parse.quote(prompt)
-    return f"https://image.pollinations.ai/prompt/{encoded_prompt}?width=300&height=300&nologo=true"
+    # Use placehold.co for instant loading
+    # Using English text to avoid encoding issues
+    # Format: https://placehold.co/300x300/png?text=Keyword
+    safe_keyword = keyword.split(" ")[0] if " " in keyword else keyword # Use first word for brevity
+    return f"https://placehold.co/300x200/png?text={safe_keyword}"
 
 PRODUCTS = {
     "여행": [
