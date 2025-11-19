@@ -183,7 +183,8 @@ elif st.session_state.page == 'shop':
     for idx, product in enumerate(products):
         with cols[idx % 2]:
             with st.container(border=True):
-                st.image(product['image'], use_container_width=True)
+                # Display large emoji instead of external image for instant loading and cute look
+                st.markdown(f"<div style='text-align: center; font-size: 80px; margin-bottom: 10px;'>{product['emoji']}</div>", unsafe_allow_html=True)
                 st.markdown(f"### {product['name']}")
                 st.write(f"**{product['price']:,}원**")
                 st.caption(product['category'])
